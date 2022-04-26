@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "M_FlightList";
+    Layout = "~/Views/Shared/_Mobile.cshtml";
+}
+
+
+
+@using (Html.BeginForm("M_SearchList", "Flight", FormMethod.Post)) {
+    <div style="width:90%;
+                margin:auto;
+                background-color:white;padding-bottom:20px">
+ 
+  <table class="table table-condensed" style="margin-top:100px">
+    <thead>
+      <tr style="background-color:#F0F0F0">
+        <th>Airport</th>
+        <th>Time Zone</th>
+        <th>Airport Name</th>
+      </tr>
+    </thead>
+    <tbody>
+     @* <tr>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Narita</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">UTC</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Narita</a></td>
+      </tr>*@
+
+      @foreach(var item in Model)
+                {
+                 <tr>
+                     <td>
+                         <a href="/B-DCS/Flight/M_Index?Airport=@item.Airport" style="text-decoration:none">@item.Airport</a>
+                     </td>
+                      <td >
+                         <a href="/B-DCS/Flight/M_Index?Airport=@item.Airport" style="text-decoration:none">@item.GMT</a>
+                     </td>
+                      <td>
+                         <a href="/B-DCS/Flight/M_Index?Airport=@item.Airport" style="text-decoration:none">@item.AirportName</a>
+                     </td>
+                 </tr>   
+
+                }
+                
+
+
+     @* <tr>
+         <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Tokyo</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">UTC</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Tokyo</a></td>
+
+      </tr>
+      <tr>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Kyoto</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">UTC</a></td>
+        <td><a href="/B-DCS/Flight/M_Index" style="text-decoration:none">Kyoto</a></td>
+
+      </tr>*@
+    </tbody>
+  </table>
+
+      <a  href="/B-DCS/Flight/M_Index"  class="btn btn-danger" style="background-color:darkgreen;width:100px;margin-top:20px;margin-left:auto;margin-right:auto;display:block">Cancel</a>
+
+   
+    </div>
+
+
+}

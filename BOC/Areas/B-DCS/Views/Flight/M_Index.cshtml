@@ -1,0 +1,39 @@
+﻿@using DevExtreme.AspNet.Mvc
+@model BOC.Areas.B_DCS.Models.DCS_FlightInfor;
+@{
+    ViewData["Title"] = "M_Index";
+    Layout = "~/Views/Shared/_Mobile.cshtml";
+}
+
+
+
+@using (Html.BeginForm("M_SearchList", "Flight", FormMethod.Post)) {
+    <div style="width:90%;
+                margin:auto;
+                background-color:white;padding-bottom:20px">
+
+    <div style="display:flex;width:100%;margin-top:100px">
+    <div style="flex:40%;background-color:white;text-align:center;padding-top:6px">Flight Date</div>
+    <div style="flex:60%;background-color:white;">
+  @* <input type="text" name="isdn" class="form-control" placeholder ="Flight Date" />*@
+  @(Html.DevExtreme().DateBoxFor(m=>m.FlightDate)
+                .Type(DateBoxType.Date)
+                .Value(string.Empty)
+            )
+</div>
+    </div>
+
+     <div style="display:flex;width:100%;margin-top:20px">
+    <div style="flex:40%;background-color:white;text-align:center;padding-top:6px">Airport</div>
+    <div style="flex:60%;background-color:white">
+  <a href="/B-DCS/Flight/M_FlightList" style="text-decoration:none"> <input type="text" name="Airport" class="form-control" placeholder ="Airport" value=@ViewBag.Airport /></a>
+
+</div>
+    </div>
+
+      <button type="submit" class="btn btn-danger" style="background-color:darkgreen;width:100px;margin-top:20px;margin-left:auto;margin-right:auto;display:block">Search</button>
+
+    </div>
+
+
+}

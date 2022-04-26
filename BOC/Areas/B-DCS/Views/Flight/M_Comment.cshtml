@@ -1,0 +1,117 @@
+﻿
+@{
+    ViewData["Title"] = "M_FlightList";
+    Layout = "~/Views/Shared/_Mobile.cshtml";
+}
+
+
+
+@using (Html.BeginForm("M_Comment", "Flight", FormMethod.Post)) {
+
+
+    <h4 style="text-align:center;margin-top:90px">NGUYEN VAN A</h4>
+    <div style="display:flex;width:90%;margin-top:10px">
+        <div style="flex:40%;background-color:white;text-align:center">SEQ/Seat/ST</div>
+        <div style="flex:60%;background-color:white;text-align:center">
+            10:00/--
+        </div>
+    </div>
+
+    <div style="display:flex;width:90%;margin-top:20px">
+        <div style="flex:40%;background-color:white;text-align:center;">PNR/Ticket</div>
+        <div style="flex:60%;background-color:white;text-align:center">
+            B787/VNA1234
+        </div>
+    </div>
+
+
+    <div style="display:flex;width:90%;margin-top:20px">
+        <div style="flex:40%;background-color:white;text-align:center">Class/SSR</div>
+        <div style="flex:60%;background-color:white;text-align:center">
+            10/52A
+        </div>
+    </div>
+
+    <div style="display:flex;width:90%;margin-top:20px">
+        <div style="flex:40%;background-color:white;text-align:center">Remark</div>
+        <div style="flex:60%;background-color:white;text-align:center">
+            10:00/--
+        </div>
+    </div>
+
+    @if (ViewBag.NewComment == "New")
+    {
+        <div style="display:flex;width:90%;margin-top:20px">
+            <div style="flex:40%;background-color:white;text-align:center">Comment</div>
+            <div style="flex:60%;background-color:white;text-align:center">
+
+            </div>
+        </div>
+
+
+
+        <div style="display:flex;width:90%;margin-top:10px;margin-bottom:10px; margin-left:10%">
+            <textarea style="flex:80%;background-color:white;text-align:center;border-radius:5px" class="form-control" rows="5" id="" name="comment_reply" placeholder="Typing your comment"></textarea>
+            <div style="flex:20%;background-color:white;text-align:center">
+                <button style="width:80%;background-color:darkgreen" class="btn btn-danger">Edit</button>
+            </div>
+        </div>
+    }
+
+   @* <div style="display:flex;width:90%;margin-top:10px;margin-bottom:10px; margin-left:10%">
+    <textarea style="flex:80%;background-color:white;text-align:center;border-radius:5px" class="form-control" rows="5" id="" name="comment_reply" placeholder="Typing your comment"></textarea>
+    <div style="flex:20%;background-color:white;text-align:center">
+        <button style="width:80%;background-color:darkgreen" class="btn btn-danger">Edit</button>
+   </div>
+    </div>*@
+
+
+
+
+
+ <div style="display:flex;width:90%;margin-top:5px;margin:auto">
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Select List</button>
+    </div>
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Select In</button>
+   </div>
+    </div>
+
+
+       <div style="display:flex;width:90%;margin-top:5px;margin:auto">
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Travel Document</button>
+    </div>
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Material Baggage</button>
+   </div>
+    </div>
+
+
+   <div style="display:flex;width:90%;margin-top:5px;margin:auto">
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Input Meal</button>
+    </div>
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Input SSR</button>
+   </div>
+    </div>
+
+
+      <div style="display:flex;width:90%;margin-top:5px;margin:auto">
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px">
+    <button type="submit" style="width:100%;background-color:darkgreen" class="btn btn-danger">New comment</button>
+    </div>
+    <div style="flex:50%;background-color:white;text-align:center;padding:5px;padding-bottom:20px">
+    <button style="width:100%;background-color:darkgreen" class="btn btn-danger">Offload</button>
+   </div>
+    </div>
+
+
+
+
+
+
+
+}
